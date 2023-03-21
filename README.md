@@ -68,7 +68,7 @@ Une fois que le script, les CSS et les polices sont installés, il faut initiali
 
 Pour cela, copiez le code suivant et collez-le à l’endroit où vous souhaitez faire apparaître le bouton permettant de lancer AccessConfig :
 
-    <div id="accessconfig" data-accessconfig-buttonname="Paramètres d’accessibilité" data-accessconfig-params='{ "Prefix" : "a42-ac", "ContainerClass" : "","ModalCloseButton" : "","ModalTitle" : "","FormFieldset" : "","FormFieldsetLegend" : "","FormRadio" : ""}' ></div>
+    <div id="accessconfig" data-accessconfig-buttonname="Paramètres d’accessibilité" data-accessconfig-params='{ "Prefix" : "a42-ac", "ContainerClass" : "","ModalCloseButton" : "","ModalTitle" : "","TagNameTitle" : "", "FormFieldset" : "","FormFieldsetLegend" : "","FormRadio" : ""}' ></div>
 
 AccessConfig met à votre disposition un certain nombre de paramètres, disponibles depuis ce code HTML. Il n’est pas nécessaire d’aller modifier le script pour les modifier. Nous les détaillons ci-après.
 
@@ -85,6 +85,7 @@ Vous pouvez également configurer les paramètres suivants :
 *   `ContainerClass` : la valeur de la classe de la fenêtre modale ;
 *   `ModalCloseButton` : la valeur de la classe du bouton de fermeture de la fenêtre modale ;
 *   `ModalTitle` : la valeur de la classe du titre de la fenêtre modale ;
+*   `TagNameTitle` : le tag souhaité pour le titre de la modal (par défaut h1) ;
 *   `FormFieldset` : la valeur de la classe des éléments `fieldset` à l’intérieur de la fenêtre modale ;
 *   `FormFieldsetLegend` : la valeur de la classe des éléments `legend` à l’intérieur de la fenêtre modale ;
 *   `FormRadio` : la valeur de la classe des `input[type="radio"]` à l’intérieur de la fenêtre modale.

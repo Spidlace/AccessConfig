@@ -1,0 +1,24 @@
+{
+  "name": "accessconfig",
+  "version": "1.0.4",
+  "description": "A style selector, light and open source, to allow people with disabilities to adapt your site to some of their needs.",
+  "main": "js/accessconfig.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spidlace/AccessConfig.git"
+  },
+  "keywords": [
+    "Access",
+    "Config",
+    "Accessibility"
+  ],
+  "author": "Access42",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Spidlace/AccessConfig/issues"
+  },
+  "homepage": "https://github.com/Spidlace/AccessConfig#readme"
+}

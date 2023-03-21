@@ -335,16 +335,19 @@ var AccessConfig = (function() {
 			/** Modal option**/
 			if( global.userParams.Modal == true || global.userParams.Modal === undefined) {
 				/** If user set data-accessconfig-param.Modal to true, then create a button to launch the modal **/
-				var modalButton = document.createElement( 'button' );
-				modalButton.setAttribute( 'id', userPrefix+'-'+config.ModalButton.id );
-				modalButton.setAttribute( 'data-accessconfig-button','true' ); 
+				var modalButtonText = document.querySelector( '[data-accessconfig-buttonname]' );
 
-				var modalButtonText = document.querySelector( '[data-accessconfig-buttonname]' );		
-				var modalButtonText = document.createTextNode(modalButtonText.getAttribute( 'data-accessconfig-buttonname' ));
-				modalButton.appendChild(modalButtonText);
+				if (modalButtonText !== null) {
+					var modalButton = document.createElement('button');
+					modalButton.setAttribute('id', userPrefix + '-' + config.ModalButton.id);
+					modalButton.setAttribute('data-accessconfig-button', 'true');
 
-				var setup = document.getElementById(config.Setup.id);
-				setup.appendChild(modalButton);
+					var modalButtonText = document.createTextNode(modalButtonText.getAttribute('data-accessconfig-buttonname'));
+					modalButton.appendChild(modalButtonText);
+
+					var setup = document.getElementById(config.Setup.id);
+					setup.appendChild(modalButton);
+				}
 
 				/** Detect other button that can launch the modal by search to data-accessconfig-button="true" **/
 				var otherOpenButton = document.querySelectorAll( '[data-accessconfig-button="true"]' );
@@ -416,7 +419,11 @@ var AccessConfig = (function() {
 			global.userParams.ContainerClass ? div.classList.add( userPrefix+'-'+global.userParams.ContainerClass ) : 
 										   div.classList.add( userPrefix+'-'+config.ModalContainer.classSetting );
 			//title
-			var titleWindow = $create({tagName:'h1', id:userPrefix+'-'+config.ModalContainer.titleId});
+			var tagNameTitle = 'h1';
+			if (global.userParams.TagNameTitle) {
+				tagNameTitle = global.userParams.TagNameTitle;
+			}
+			var titleWindow = $create({tagName:tagNameTitle, id:userPrefix+'-'+config.ModalContainer.titleId});
 			global.userParams.ModalTitle ? titleWindow.classList.add( userPrefix+global.userParams.ModalTitle ) : 
 										   titleWindow.classList.add( userPrefix+'-'+config.ModalContainer.titleClass );
 			var titleTxt = document.createTextNode( config.ModalContainer.titleLang[ langRef ]);
